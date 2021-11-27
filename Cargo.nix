@@ -5,7 +5,6 @@ args@{
   release ? true,
   rootFeatures ? [
     "foo/default"
-    "bar/default"
   ],
   rustPackages,
   buildRustPackages,
@@ -36,19 +35,7 @@ in
   cargo2nixVersion = "0.10.0";
   workspace = {
     foo = rustPackages.unknown.foo."0.1.0";
-    bar = rustPackages.unknown.bar."0.1.0";
   };
-  "unknown".bar."0.1.0" = overridableMkRustCrate (profileName: rec {
-    name = "bar";
-    version = "0.1.0";
-    registry = "unknown";
-    src = fetchCrateLocal (workspaceSrc + "/bar");
-    features = builtins.concatLists [
-      [ "default" ]
-      [ "python" ]
-    ];
-  });
-  
   "unknown".foo."0.1.0" = overridableMkRustCrate (profileName: rec {
     name = "foo";
     version = "0.1.0";
@@ -58,9 +45,6 @@ in
       [ "default" ]
       [ "python" ]
     ];
-    dependencies = {
-      bar = rustPackages."unknown".bar."0.1.0" { inherit profileName; };
-    };
   });
   
 }
