@@ -13,11 +13,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1637398005,
-        "narHash": "sha256-m5XfJAW81tKjXb7ci22MieRMTypizyaNZVHjxKF6V64=",
+        "lastModified": 1638423893,
+        "narHash": "sha256-+NTV613zwK1G4UIKrj0gh1fYDvi85qO0wxy6h11azuY=",
         "owner": "cargo2nix",
         "repo": "cargo2nix",
-        "rev": "cf339618f8594ef1d83940a8c3ce37850b6bfc58",
+        "rev": "ae8a5e699f57b446f9507b97a3c97a4e9fe06aa3",
         "type": "github"
       },
       "original": {
