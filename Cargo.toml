@@ -8,5 +8,6 @@ edition = "2021"
 [dependencies]
 
 [features]
-default = []
+default = ["python"]
 python = []
+elisp = []
